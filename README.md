@@ -1,6 +1,6 @@
-# Angular 10 with Bootstrap - Role Based Authorization Example
+# Angular 10 with Bootstrap - Role Based Authorization Example with Client & Server
 
-An example of how to implement role based authorization / access control in Angular 10. Using JWT authentication with refresh tokens and a fake backend.
+An example of how to implement role based authorization / access control in Angular 10. Using JWT authentication with refresh tokens and an Node.js API back-end.
 
 There are three pages - a login page, a home page and an admin page. There are two roles - a regular user (Role.User) that can access the home page, and an admin user (Role.Admin) that can access everything.
 
@@ -8,11 +8,12 @@ There are three pages - a login page, a home page and an admin page. There are t
 * [Building the client](#Building-the-client)
   * [Used technologies and components](#Used-technologies-and-components)
   * [Project structure](#Project-structure)
-  * [Implementations](#Implementations)
+  * [Implementation](#Implementation)
   * [Documentation](#Documentation)
     * [TypeScript tsconfig.json](#TypeScript-tsconfig.json)
     * [Further information](#Further-information)
   * [Deployment](#Deployment)
+* [Building the server](#Building-the-server)
 
 ---
 
@@ -46,7 +47,7 @@ When disabling the fake back-end the URL in `/src/environments/environment.prod.
 
 To disable the fake back-end remove or comment out the line below the comment `// provider used to create fake backend` located in the `/src/app/app.module.ts`.
 
-## Implementations
+## Implementation
 
 **/_helpers/**:
 * add auth.guard.ts
@@ -91,12 +92,35 @@ To disable the fake back-end remove or comment out the line below the comment `/
 Set up your local development environment: [See Jason Watmore's article](https://jasonwatmore.com/post/2020/06/02/angular-setup-development-environment)
 
 ## Further information
-This example app was built with the help of the following lecture:
-* [Jason Watmore: role base authorization tutorial](https://jasonwatmore.com/post/2020/09/09/angular-10-role-based-authorization-tutorial-with-example) / [PDF version](./docs/documents/Jason-Watmores-Blog-Angular-10-Role-Based-Authorization-Tutorial-with-Example.pdf)
+This client example app was built with the help of the following lecture:
+* [Jason Watmore: role base authorization tutorial](https://jasonwatmore.com/post/2020/09/09/angular-10-role-based-authorization-tutorial-with-example) / [PDF version](./docs/documents/Jason-Watmore-Angular-10-Role-Based-Authorization-Tutorial-with-Example.pdf)
 * [Jason Watmore: GitHub repo with the authorization example](https://github.com/cornflourblue/angular-10-role-based-authorization-example)
 
 # Deployment
 
+Install GitHub pages Deployment for Angular:
 ```shell
-$ ng deploy --base-href=https://scheel.dev/ng-bootstrap-role-based-authorization-example/
+$ ng add angular-cli-ghpages
 ```
+
+Deploy to my GitHub Pages hosting service:
+```shell
+$ ng deploy --base-href=https://scheel.dev/ng-bootstrap-role-based-authorization-client-server/
+```
+
+---
+
+# Building the server
+
+This is a simple example of how to implement a role based authorization / access control in a Node.js API.
+
+The example API has just three endpoints to demonstrate authentication and role based authorization:
+
+* `/users/authenticate` - public route that accepts HTTP POST requests with username and password in the body. If the username and password are correct then a JWT authentication token is returned.
+* `/users` - secure route restricted to "Admin" users only, it accepts HTTP GET requests and returns a list of all users if the HTTP Authorization header contains a valid JWT token and the user is in the "Admin" role. If there is no auth token, the token is invalid or the user is not in the "Admin" role then a 401 Unauthorized response is returned.
+* `/users/:id` - secure route restricted to authenticated users in any role, it accepts HTTP GET requests and returns the user record for the specified "id" parameter if authorization is successful. Note that "Admin" users can access all user records, while other roles (e.g. "User") can only access their own user record.
+
+## Further information
+This server example app was built with the help of the following lecture:
+* [Jason Watmore: Node.js - Role Based Authorization Tutorial](https://jasonwatmore.com/post/2018/11/28/nodejs-role-based-authorization-tutorial-with-example-api) / [PDF version](./docs/documents/Jason-Watmore-Node.js-Role-Based-Authorization-Tutorial-with-Example-API.pdf)
+* [Jason Watmore: GitHub repo with the authorization api](https://github.com/cornflourblue/node-role-based-authorization-api)
