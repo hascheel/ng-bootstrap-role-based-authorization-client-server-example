@@ -9,10 +9,10 @@ There are three pages - a login page, a home page and an admin page. There are t
   * [Used technologies and components](#Used-technologies-and-components)
   * [Project structure](#Project-structure)
   * [Implementations](#Implementations)
-* [Documentation](#Documentation)
-  * [TypeScript tsconfig.json](#TypeScript-tsconfig.json)
-  * [Further information](#Further-information)
-* [Deployment](#Deployment)
+  * [Documentation](#Documentation)
+    * [TypeScript tsconfig.json](#TypeScript-tsconfig.json)
+    * [Further information](#Further-information)
+  * [Deployment](#Deployment)
 
 ---
 
@@ -37,6 +37,14 @@ Path aliases `@app` and `@environments` have been configured in `tsconfig.base.j
 **Path: /tsconfig.json**
 
 The paths property has been added to map the `@app` and `@environments` aliases to the `/src/app` and `/src/environments` directories. This allows imports to be relative to the app and environments folders by prefixing import paths with aliases instead of having to use long relative paths (e.g. `import MyComponent from '@app/MyComponent'` instead of `import MyComponent from '../../../MyComponent'`).
+
+## Disable fake back-end
+
+The fake back-end makes it possible to use the client serverless in a browser for easier development.
+
+When disabling the fake back-end the URL in `/src/environments/environment.prod.ts` and `/src/environments/environment.ts`is used to call an external api.
+
+To disable the fake back-end remove or comment out the line below the comment `// provider used to create fake backend` located in the `/src/app/app.module.ts`.
 
 ## Implementations
 
