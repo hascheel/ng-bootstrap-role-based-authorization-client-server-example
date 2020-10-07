@@ -1,8 +1,10 @@
 # Angular 10 with Bootstrap - Role Based Authorization Example with Client & Server
 
-An example of how to implement role based authorization / access control in Angular 10. Using JWT authentication with refresh tokens and an Node.js API back-end.
+This is an implementaton of a role based authorization in Angular with a Node.js API from a tutorial of [Jason Watmore](https://jasonwatmore.com/post/2018/11/28/nodejs-role-based-authorization-tutorial-with-example-api).
 
 There are three pages - a login page, a home page and an admin page. There are two roles - a regular user (Role.User) that can access the home page, and an admin user (Role.Admin) that can access everything.
+
+There is no database. A fake backend with hardcoded data in the backend answers the API calls.
 
 ### Table of content
 * [Building the client](#building-the-client)
@@ -23,6 +25,7 @@ There are three pages - a login page, a home page and an admin page. There are t
   * [Auth App Config](#auth-app-config)
   * [Auth Main Server Entrypoint](#auth-main-server-entrypoint)
   * [Further information](#further-information)
+  * [Original Licence](#original-licence)
 
 ---
 
@@ -195,3 +198,33 @@ The server.js file is the entry point into the api, it configures application mi
 This server example app was built with the help of the following lecture:
 * [Jason Watmore: Node.js API - Role Based Authorization Tutorial](https://jasonwatmore.com/post/2018/11/28/nodejs-role-based-authorization-tutorial-with-example-api) / [PDF version](./docs/documents/Jason-Watmore-Node.js-Role-Based-Authorization-Tutorial-with-Example-API.pdf)
 * [Jason Watmore: GitHub repo with the authorization api](https://github.com/cornflourblue/node-role-based-authorization-api)
+
+## Original Licence
+
+The original version of this software can be found here:
+* [Angular 10 - Role Based Authorization Tutorial with Example](https://github.com/cornflourblue/angular-10-role-based-authorization-example)
+* [Node.js - Role Based Authorization Tutorial with Example API](https://github.com/cornflourblue/node-role-based-authorization-api)
+
+```
+The MIT License (MIT)
+
+Copyright (c) 2018 Jason Watmore
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
