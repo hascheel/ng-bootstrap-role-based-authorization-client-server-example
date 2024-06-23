@@ -1,6 +1,6 @@
 # Angular 10 with Bootstrap - Role Based Authorization Example with Client & Server
 
-This is an implementaton of a role based authorization in Angular with a Node.js API from a tutorial of [Jason Watmore](https://jasonwatmore.com/post/2018/11/28/nodejs-role-based-authorization-tutorial-with-example-api).
+This is an implementaton of a role based authorization in Angular with a Node.js API from a tutorial.
 
 There are three pages - a login page, a home page and an admin page. There are two roles - a regular user (Role.User) that can access the home page, and an admin user (Role.Admin) that can access everything.
 
@@ -198,6 +198,9 @@ The server.js file is the entry point into the api, it configures application mi
 This server example app was built with the help of the following lecture:
 * [Jason Watmore: Node.js API - Role Based Authorization Tutorial](https://jasonwatmore.com/post/2018/11/28/nodejs-role-based-authorization-tutorial-with-example-api) / [PDF version](./docs/documents/Jason-Watmore-Node.js-Role-Based-Authorization-Tutorial-with-Example-API.pdf)
 * [Jason Watmore: GitHub repo with the authorization api](https://github.com/cornflourblue/node-role-based-authorization-api)
+
+## About
+This is an implementaton of a role based authorization in Angular with a Node.js API with the help of a tutorial from [Jason Watmore](https://jasonwatmore.com/post/2018/11/28/nodejs-role-based-authorization-tutorial-with-example-api).
 
 ## Original Licence
 
