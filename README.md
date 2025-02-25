@@ -1,6 +1,6 @@
-# Angular 10 with Bootstrap - Role Based Authorization Example with Client & Server
+# Role Based Authorization Example with Client & Server apps
 
-This is an implementaton of a role based authorization in Angular with a Node.js API.
+This is an implementaton of a role based authorization in Angular 10, Bootstrap and with a Node.js API.
 
 There are three pages - a login page, a home page and an admin page. There are two roles - a regular user (Role.User) that can access the home page, and an admin user (Role.Admin) that can access everything.
 
