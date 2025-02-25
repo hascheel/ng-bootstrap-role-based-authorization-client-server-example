@@ -211,7 +211,7 @@ The original version of this software can be found here:
 ```
 The MIT License (MIT)
 
-Copyright (c) 2018 Jason Watmore
+Copyright (c) Jason Watmore (2018) &  Hardy Scheel (2020)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
